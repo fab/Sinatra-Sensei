@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :email, :unique => true
       t.string :password_hash
+      t.timestamps
     end
   end
 end
