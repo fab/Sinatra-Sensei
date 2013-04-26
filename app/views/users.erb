@@ -1,0 +1,10 @@
+<div class="container">
+  <a href='/'>Homepage</a>
+  <h1>Here is a list of all users:</h1>
+
+  <ul id='user_list'>
+    <% @all_users.each do |user| %>
+      <li><a href='/users/<%= user.id %>'><%= user.full_name %></a></li>
+    <% end %>
+  </ul>
+</div>

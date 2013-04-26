@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
     return false if @user == nil
     @user.password == params[:password]
   end
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 end

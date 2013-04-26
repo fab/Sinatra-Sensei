@@ -1,0 +1,19 @@
+<div class="container">
+  <a href='/'>Homepage</a>
+  <h1>List of all posts for <%= @user.full_name %>:</h1>
+
+  <table>
+    <tr>
+      <th>Post Title</th>
+      <th>Tags</th>
+    </tr>
+    <% @user.posts.each do |post| %>
+      <tr>
+        <td><a href='/posts/<%= post.id %>'><%= post.title %></a></td>
+        <td><%= erb :_list_tags, :layout => false, locals: {post: post}%></td>
+      </tr>
+    <% end %>
+  </table>
+  
+</div>
+

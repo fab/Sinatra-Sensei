@@ -1,0 +1,17 @@
+<div class="container">
+  <a href='/'>Homepage</a>
+  <h1>List of all posts for the tag #<%= @tag.name %>:</h1>
+
+  <table>
+    <tr>
+      <th>Post Title</th>
+      <th>Author Name</th>
+    </tr>
+    <% @tag.posts.each do |post| %>
+      <tr>
+        <td><a href='/posts/<%= post.id %>'><%= post.title %></a></td>
+        <td><% if post.user %>by: <%= post.user.full_name %><% end %></td>
+      </tr>
+    <% end %>
+  </table> 
+</div>

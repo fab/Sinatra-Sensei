@@ -8,3 +8,5 @@ user1 = User.create(first_name: 'Fab', last_name: 'Mackojc',
 tag1 = Tag.create(name: 'personal')
 
 comment1 = Comment.create(content: 'This is my first comment!', user_id: 1, post_id: 1)
+
+post1.tags << tag1
