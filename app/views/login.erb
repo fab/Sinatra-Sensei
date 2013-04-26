@@ -1,0 +1,22 @@
+<h2>Login</h2>
+<form action='/login' method='post'>
+  Email:    <input type="text" placeholder="email" name="email">
+  <br>
+  Password: <input type="password" placeholder="password" name="password">
+            <input type="submit" value="Login">
+</form>
+<br>
+<p><%= @message %></p>
+
+<h2>Create account</h2>
+<form action='/create_user' method='post'>
+  First Name:    <input type="text" placeholder="first name" name="first_name">
+  <br>
+  Last Name: <input type="text" placeholder="last name" name="last_name">
+  <br>
+  Email:    <input type="text" placeholder="email" name="email">
+  <br>
+  Password: <input type="password" placeholder="password" name="password">
+            <input type="submit" value="Create account">
+</form>
+<p><%= @error %></p>

@@ -1,9 +1,32 @@
-<div class="container">  
-  <h1>Welcome to this Sinatra blog</h1>
-  <a href='/create_post'>Click here to create a new post</a>
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <% if session[:id] %> 
+      <h1>Welcome, <%= User.find(session[:id]).first_name %></h1>
+      <br>
+      <a class="btn btn-large btn-success" href="/create_post">Create a post</a>
+    <% else %>
+      <h1>This is Sinatra</h1>
+      <p class="lead">Experience the beauty and functionality of the web framework Sinatra</p>  
+    <% end %>
+  </div>  
 
+  <hr>
 
-  <!-- still needs the following:
-       1. login and create account options -->
-
-</div>
+  <!-- Example row of columns -->
+  <div class="row-fluid">
+    <div class="span4">
+      <h2><%= @all_posts[0].title %></h2>
+      <p><%= @all_posts[0].body %></p>
+      <p><a class="btn" href="/posts/1">View post &raquo;</a></p>
+    </div>
+    <div class="span4">
+      <h2><%= @all_posts[1].title %></h2>
+      <p><%= @all_posts[1].body %></p>
+      <p><a class="btn" href="/posts/2">View post &raquo;</a></p>
+    </div>
+    <div class="span4">
+      <h2><%= @all_posts[2].title %></h2>
+      <p><%= @all_posts[1].body %></p>
+      <p><a class="btn" href="/posts/3">View post &raquo;</a></p>
+    </div>
+  </div>

@@ -1,8 +1,11 @@
 <div class="container">
   <h1><%= @post.title %></h1>
-  <p>Created on: <%= @post.created_at.to_s(:long) %></p>
-  <h2><% if @post.user %>by: <%= @post.user.full_name %><% end %></h2>
+  <p>Created on: <%= @post.created_at.to_s(:long) %> by <%= @post.user.full_name %></p>
   <p><%= @post.body %></p>
   <p>Tags: <%= erb :_list_tags, :layout => false, locals: {post: @post}%></p>
-  <a href='/posts/<%= @post.id %>/update'>Update this post</a>
+  <% if @post.user.id == session[:id] %>
+    <a href='/posts/<%= @post.id %>/update'>Update this post</a>
+    <br>
+    <a href='/posts/<%= @post.id %>/delete'>Delete this post</a>
+  <% end %>
 </div>

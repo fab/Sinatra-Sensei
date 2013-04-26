@@ -1,4 +1,5 @@
 get '/' do
-  # Look in app/views/index.erb
+  puts session.inspect
+  @all_posts = Post.all
   erb :index
 end
