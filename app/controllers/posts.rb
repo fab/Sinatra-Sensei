@@ -22,10 +22,39 @@ end
 
 get '/posts/:id/update' do
   @post = Post.find(params[:id])
-  "You tried to update the post entitled #{@post.title}"
+  if @post.user.id == session[:id]
+    erb :update_post
+  else
+    @three_posts = Post.all.sample(3)
+    erb :index
+  end
+end
+
+post '/posts/:id/update' do
+  @post = Post.find(params[:id])
+  update_values = {}
+  attr_names = ['title', 'body']
+  attr_names.each do |attribute|
+    key = attribute.to_sym
+    value = params[attribute.to_sym]
+    update_values[key] = value
+  end
+  @post.tags.clear
+  tags = parse_tags(params[:tags])
+  @post.tags << tags
+  puts "Update values: #{update_values}"
+  puts "Params: #{params}"
+  @post.update_attributes(update_values)
+  erb :post
 end
 
 get '/posts/:id/delete' do
-  @post = Post.find(params[:id]).destroy
-  erb :posts
+  if @post.user.id == session[:id]
+    @post = Post.find(params[:id]).destroy
+    @all_posts = Post.all
+    erb :posts
+  else
+    @three_posts = Post.all.sample(3)
+    erb :index
+  end
 end

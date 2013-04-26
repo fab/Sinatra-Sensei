@@ -1,4 +1,4 @@
-<form action='/posts/:id/update' method='POST'>
+<form action='/posts/<%= @post.id %>/update' method='POST'>
   <input type='text' placeholder='title' name='title'>
   <textarea placeholder='body' name='body'></textarea>
   <input type='text' placeholder='tags' name='tags'>

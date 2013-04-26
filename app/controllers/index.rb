@@ -1,5 +1,5 @@
 get '/' do
   puts session.inspect
-  @all_posts = Post.all
+  @three_posts = Post.all.sample(3)
   erb :index
 end

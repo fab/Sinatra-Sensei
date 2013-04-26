@@ -15,18 +15,18 @@
   <!-- Example row of columns -->
   <div class="row-fluid">
     <div class="span4">
-      <h2><%= @all_posts[0].title %></h2>
-      <p><%= @all_posts[0].body %></p>
-      <p><a class="btn" href="/posts/1">View post &raquo;</a></p>
+      <h2><%= @three_posts[0].title %></h2>
+      <p><%= @three_posts[0].body %></p>
+      <p><a class="btn" href="/posts/<%= @three_posts[0].id%>">View post &raquo;</a></p>
     </div>
     <div class="span4">
-      <h2><%= @all_posts[1].title %></h2>
-      <p><%= @all_posts[1].body %></p>
-      <p><a class="btn" href="/posts/2">View post &raquo;</a></p>
+      <h2><%= @three_posts[1].title %></h2>
+      <p><%= @three_posts[1].body %></p>
+      <p><a class="btn" href="/posts/<%= @three_posts[1].id%>">View post &raquo;</a></p>
     </div>
     <div class="span4">
-      <h2><%= @all_posts[2].title %></h2>
-      <p><%= @all_posts[1].body %></p>
-      <p><a class="btn" href="/posts/3">View post &raquo;</a></p>
+      <h2><%= @three_posts[2].title %></h2>
+      <p><%= @three_posts[2].body %></p>
+      <p><a class="btn" href="/posts/<%= @three_posts[2].id%>">View post &raquo;</a></p>
     </div>
   </div>

@@ -10,7 +10,7 @@ end
 
 get '/login' do
   if session[:id]
-    @all_posts = Post.all
+    @three_posts = Post.all.sample(3)
     erb :index
   else
     erb :login
@@ -22,7 +22,7 @@ post '/create_user' do
   if @user.valid?
     @user.save
     session[:id] = @user.id
-    @all_posts = Post.all
+    @three_posts = Post.all.sample(3)
     erb :index
   else
     @error = "Fields cannot be blank. That email might already be in our database."
@@ -34,7 +34,7 @@ post '/login' do
   if User.login(params)
     @user = User.find_by_email(params[:email])
     session[:id] = @user.id
-    @all_posts = Post.all
+    @three_posts = Post.all.sample(3)
     erb :index
   else
     @message = "Error, either username or password incorrect. Try again."
@@ -44,6 +44,6 @@ end
 
 get '/logout' do
   session.clear
-  @all_posts = Post.all
+  @three_posts = Post.all.sample(3)
   erb :index
 end
