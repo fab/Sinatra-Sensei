@@ -33,3 +33,4 @@ post2.tags << tag3
 
 post3.tags << tag3
 
+post4.tags << tag3
