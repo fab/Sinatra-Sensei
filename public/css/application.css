@@ -1,8 +1,50 @@
 .container {
+  background-color: #FABFAB;
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  margin-top: 90px
+}
+
+.header {
+  background-color: green;
+  width: 100%;
+  line-height: 64px;
+  height: 64px;
+  color: white;
+  position: fixed;
+  top: 0;
+}
+
+.header h1 {
+  float: left;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.links {
+  margin: 0;
+  float: right;
+}
+
+.links a {
+  padding-right: 0px;
+  display: inline;
+  list-style-type: none;
+}
+
+#tag_list {
+  list-style-type: none;
+}
+
+#user_list {
+  list-style-type: none;
 }
 
 th {
@@ -12,12 +54,4 @@ th {
 
 td {
  padding-right: 20px;
-}
-
-#tag_list {
-  list-style-type: none;
-}
-
-#user_list {
-  list-style-type: none;
 }

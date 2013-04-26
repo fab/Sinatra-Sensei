@@ -1,5 +1,4 @@
 <div class="container">
-  <a href='/'>Homepage</a>
   <h1><%= @post.title %></h1>
   <p>Created on: <%= @post.created_at.to_s(:long) %></p>
   <h2><% if @post.user %>by: <%= @post.user.full_name %><% end %></h2>
