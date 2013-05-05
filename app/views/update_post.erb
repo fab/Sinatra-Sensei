@@ -1,6 +1,6 @@
 <form action='/posts/<%= @post.id %>/update' method='POST'>
-  <input type='text' placeholder='title' name='title'>
-  <textarea placeholder='body' name='body'></textarea>
-  <input type='text' placeholder='tags' name='tags'>
+  <input type='text' value='<%= @post.title %>' placeholder='title' name='title'>
+  <textarea placeholder='body' name='body'><%= @post.body %></textarea>
+  <input type='text' value='<%= @post.tags.map {|tag| tag.name }.join(', ') %>'placeholder='tags' name='tags'>
   <input type='submit' value='Update Post'>
 </form>
