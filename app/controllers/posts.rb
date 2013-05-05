@@ -49,10 +49,10 @@ post '/posts/:id/update' do
 end
 
 get '/posts/:id/delete' do
-  if @post.user.id == session[:id]
-    @post = Post.find(params[:id]).destroy
-    @all_posts = Post.all
-    erb :posts
+  post = Post.find(params[:id])
+  if post.user.id == session[:id]
+    post.destroy
+    redirect '/posts'
   else
     @three_posts = Post.all.sample(3)
     erb :index
