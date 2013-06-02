@@ -20,6 +20,7 @@ gem 'shotgun'
 gem 'bcrypt-ruby'
 
 gem 'newrelic_rpm'
+gem 'pry'
 
 group :test do
   gem 'faker'
