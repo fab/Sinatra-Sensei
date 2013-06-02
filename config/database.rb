@@ -39,5 +39,6 @@ ActiveRecord::Base.establish_connection(
   :username => db.user,
   :password => db.password,
   :database => DB_NAME,
-  :encoding => 'utf8'
+  :encoding => 'utf8',
+  :min_messages => "warning"
 )
